@@ -6,15 +6,15 @@ pipeline {
             args '-u root'
         }
     }
-    environment{
-        DATABASE_URI = credentials('DATABASE_URI')
-    }
 
     stages {
         stage('Environment configuration'){
+            environment{
+            DATABASE_URI = credentials('DATABASE_URI')
+        }
             steps {
                 echo 'Try env variable'
-                echo 'DATABSE_URI = $DATABSE_URI >> .env'
+                echo 'DATABASE_URI = $DATABASE_URI'
             }
         }
         stage('Building Node') {
