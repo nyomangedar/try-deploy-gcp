@@ -9,12 +9,10 @@ pipeline {
 
     stages {
         stage('Environment configuration'){
-            environment{
-            DATABASE_URI = credentials('DATABASE_URI')
-        }
             steps {
                 echo 'Try env variable'
-                echo 'DATABASE_URI = $DATABASE_URI'
+                echo "DATABASE_URI = ${env.DATABASE_URI}"
+                sh 'DATABASE_URI = $DATABASE_URI >> .env'
             }
         }
         stage('Building Node') {
