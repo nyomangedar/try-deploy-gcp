@@ -15,7 +15,7 @@ pipeline {
             steps {
                 echo 'Try env variable'
                 echo "DATABASE_URI = ${env.DATABASE_URI}"
-                sh 'DATABASE_URI = $DATABASE_URI >> .env'
+                sh "DATABASE_URI = ${env.DATABASE_URI} >> .env"
             }
         }
         stage('Building Node') {
