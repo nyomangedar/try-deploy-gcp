@@ -14,7 +14,7 @@ pipeline {
                 echo "DATABASE_URI = ${env.DATABASE_URI}"
                 sh "touch .env"
                 sh """
-                echo "DATABASE_URI = ${env.DATABASE_URI}" >> .env
+                echo "DATABASE_URI = ${env.DATABASE_URI}\nSTATUS=PRODUCTION" >> .env
                 """
             }
         }
