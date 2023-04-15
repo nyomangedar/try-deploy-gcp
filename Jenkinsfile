@@ -12,6 +12,7 @@ pipeline {
             steps {
                 echo 'Try env variable'
                 echo "DATABASE_URI = ${env.DATABASE_URI}"
+                sh "rm -f .env"
                 sh "touch .env"
                 sh """
                 echo "DATABASE_URI = ${env.DATABASE_URI}\nSTATUS=PRODUCTION" >> .env
