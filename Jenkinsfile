@@ -24,6 +24,13 @@ pipeline {
                 echo 'Building...'
                 sh 'npm install'
             }
+
+        }
+        stage('Start Server'){
+            steps{
+                echo 'Start Server'
+                sh 'npm start'
+            }
         }
     }
 }
