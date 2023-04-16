@@ -22,7 +22,7 @@ pipeline {
         stage('Building Node') {
             steps {
                 echo 'Building...'
-                sh 'npm install'
+                sh 'npm ci'
             }
 
         }
