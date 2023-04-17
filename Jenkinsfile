@@ -26,11 +26,5 @@ pipeline {
             }
 
         }
-        stage('Start Server'){
-            steps{
-                echo 'Start Server'
-                sh 'npm start'
-            }
-        }
     }
 }
